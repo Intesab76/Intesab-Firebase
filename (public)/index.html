@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./app.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <title>Firebase Blog</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="create.html">Create</a>
+          </li>
+          <li class = "nav-item">
+            <a class="nav-link" href = "login.html"  style="margin-left:24cm; color: black; background-color:cornsilk;border:2px solid maroon;border-radius: 10px;">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- <button onclick="logout()">Logout</button> -->
+    <main role="main">
+      <!-- JUMBOTRON -->
+      <!-- <div class="jumbotron">
+        <div class="container"> -->
+
+          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" >
+                <img src="https://source.unsplash.com/random/1800x600" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1631521316445-f044306e6d1a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTYzMjIyNzY4Ng&ixlib=rb-1.2.1&q=80&w=1800" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="https://source.unsplash.com/random/1600x600" class="d-block w-100" alt="...">
+              </div>
+            </div>
+          </div>
+
+          <script>
+            //handle Bootstrap carousel slide event
+            $(".carousel slide carousel-fade").attr("data-interval", "100");
+        </script>
+          <!-- <h1 class="display-3 pt-4">Blog</h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore
+            doloribus minima reiciendis. Aliquam et at dignissimos velit
+            excepturi earum beatae non magnam rem officia nam voluptas adipisci
+            cum similique quas necessitatibus quae asperiores, sit aut.
+          </p>
+          <p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a>
+          </p> -->
+        <!-- </div>
+      </div> -->
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row" id="posts-collection"></div>
+
+        <hr />
+      </div>
+      <!-- /container -->
+    </main>
+
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBycgCVi5IO8LLKT08PiY7uGbCJpigJNSE",
+      authDomain: "blogs-site.firebaseapp.com",
+      projectId: "blogs-site",
+      storageBucket: "blogs-site.appspot.com",
+      messagingSenderId: "888493661593",
+      appId: "1:888493661593:web:50f9632c19b3a72b1b0708"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.2/firebase-firestore.js"></script>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"crossorigin="anonymous"></script>></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+
+
+
+      <!-- Option 2: Separate Popper and Bootstrap JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+
+    <script src="app.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
